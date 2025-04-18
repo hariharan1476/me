@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "homepage": "https://hari1476.github.io/Portfolio",
+  "homepage": "https://hari1476.github.io/me",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
