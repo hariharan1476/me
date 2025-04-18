@@ -1,0 +1,1 @@
+export const profileImageUrl = 'public/20241217_211723.jpg';

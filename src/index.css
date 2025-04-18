@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cursor-size: 30px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white dark:bg-neutral-900 text-neutral-800 dark:text-neutral-200 transition-colors duration-300;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+::selection {
+  @apply bg-primary-500/30 text-primary-950 dark:text-primary-50;
+}
+
+@media (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+  
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: rgba(139, 92, 246, 0.8);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999;
+  transition: width 0.3s, height 0.3s, background-color 0.3s, transform 0.05s;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--cursor-size);
+  height: var(--cursor-size);
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999;
+  transition: width 0.3s, height 0.3s, border-color 0.3s, transform 0.1s;
+}
+
+.cursor-dot.link-hover,
+.cursor-ring.link-hover {
+  transform: scale(1.5);
+  background-color: rgba(139, 92, 246, 1);
+  border-color: rgba(139, 92, 246, 0.6);
+}
+
+.section-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-md px-6 py-3 text-base font-medium shadow-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-primary {
+  @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+}
+
+.btn-secondary {
+  @apply bg-white text-primary-700 border border-primary-300 hover:bg-primary-50 focus:ring-primary-500;
+}
+
+.nav-link {
+  @apply text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300;
+}
+
+.nav-link.active {
+  @apply text-primary-700 dark:text-primary-500;
+}
+
+.section-title {
+  @apply text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white mb-8 relative;
+}
+
+.section-title::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-16 h-1 bg-primary-600 rounded;
+  bottom: -0.5rem;
+}
+
+.card {
+  @apply bg-white dark:bg-neutral-800 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-neutral-200 dark:border-neutral-700;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
