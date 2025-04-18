@@ -3,7 +3,10 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
+  "homepage": "https://hari1476.github.io/Portfolio",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
