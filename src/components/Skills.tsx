@@ -38,7 +38,7 @@ const Skills: React.FC = () => {
     {
       name: 'Language',
       icon: <Languages className="h-6 w-6" />,
-      skills: ['English']
+      skills: ['English','Tamil']
     }
   ];
 
