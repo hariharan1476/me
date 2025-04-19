@@ -90,7 +90,7 @@ const Achievements: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           <a
-            href="hariharan1476.github.io/web-certificates/"
+            href="https://hariharan1476.github.io/web-certificates/"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-primary inline-flex"
